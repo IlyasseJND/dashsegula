@@ -55,7 +55,7 @@ col_cons=pd.DataFrame(col_cons).to_dict('records')
 dash_app = Dash(__name__,suppress_callback_exceptions=True,external_stylesheets=[dbc.themes.CYBORG])
 server = dash_app.server
 
-dash_dash_app.layout = html.Div([
+dash_app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content'),
 
@@ -110,4 +110,4 @@ def display_page(pathname):
         return Layout
 
 if __name__ == '__main__':
-    dash_app.run_server()
+    dash_app.run_server(debug=True,port=8000)
