@@ -91,7 +91,7 @@ Layout=html.Div([
     ])
     
 
-@callback(Output('page-content', 'children'),
+@dash_app.callback(Output('page-content', 'children'),
               Input('url', 'pathname'))
 def display_page(pathname):
     if pathname == '/page1':
